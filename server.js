@@ -6,6 +6,7 @@ const io = require("socket.io")(httpServer, {
       methods: ["GET", "POST"]
     }
   });
+  
 let players = [];
 
 io.on('connection', function (socket) {
