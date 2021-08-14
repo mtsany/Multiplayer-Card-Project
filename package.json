@@ -10,7 +10,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "nodemon": "^2.0.12",
-    "socket.io": "^4.1.3"
+    "socket.io": "^4.1.3",
+    "webpack": "^5.50.0"
   },
   "browser": {
     "fs": false,
@@ -18,5 +19,13 @@
     "os": false
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtsany/Multiplayer-Card-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mtsany/Multiplayer-Card-Project/issues"
+  },
+  "homepage": "https://github.com/mtsany/Multiplayer-Card-Project#readme",
   "description": ""
 }
