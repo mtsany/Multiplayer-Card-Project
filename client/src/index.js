@@ -13,9 +13,4 @@ const config = {
 
 const game = new Phaser.Game(config);
 
-const io = require("socket.io")(http, {
-    cors: {
-        origin: "http://localhost:8080/",
-        methods: ["GET", "POST"]
-    }
-});
+const io = require("socket.io-client")

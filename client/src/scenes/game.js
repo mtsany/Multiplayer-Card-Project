@@ -11,6 +11,7 @@ export default class Game extends Phaser.Scene {
     
     preload() {
         this.load.image('backOfCard', 'src/assets/back-of-card.jpg');
+        this.load.atlas('cards', 'assets/atlas/cards.png', 'assets/atlas/cards.json');
         }
 
     create() {
@@ -20,21 +21,27 @@ export default class Game extends Phaser.Scene {
         this.dropZone = this.zone.renderZone();
         this.outline = this.zone.renderOutline(this.dropZone);
 
-        this.socket = io('http://localhost:3000');
+        this.socket = io('http://localhost:3000', {
+            withCredentials: true,
+            extraHeaders: {
+                "my-custom-header": "abcd"
+            }
+        });
 
-        this.socket.on('connect', function() {
+        this.socket.on('connect', () => {
             console.log('Connected!');
+            displayMessage('You connected with id: ${socket.id}')
         });
  
         this.dealCards = () => {
-            for (let i = 0; i < 3; i ++ ) {
+            for (let i = 0; i < 2; i ++ ) {
                 let playerCard = new Card(this);
                 playerCard.render(475 + (i*100), 650, 'backOfCard');
             }
 
         }
 
-        this.dealText = this.add.text(75, 350, ['DEAL CARDS']).setFontSize(18).setFontFamily('Consolas').setColor('#00ffff').setInteractive();
+        this.dealText = this.add.text(75, 350, ['Deal Cards']).setFontSize(18).setFontFamily('Consolas').setColor('#00ffff').setInteractive();
     
         this.dealText.on('pointerdown', function () {
             self.dealCards();

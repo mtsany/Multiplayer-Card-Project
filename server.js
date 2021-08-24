@@ -2,8 +2,10 @@ const server = require('express')();
 const http = require('http').createServer(server);
 const io = require("socket.io")(http, {
     cors: {
-      origin: "https://example.com",
-      methods: ["GET", "POST"]
+      origin: ["https://localhost:8080"],
+      methods: ["GET", "POST"],
+      allowedHeaders: ["my-custom-header"],
+      credentials: true
     }
   });
 
@@ -23,6 +25,6 @@ io.on('connection', function (socket) {
     })
 });
 
-http.listen(3000, function () {
+http.listen(3000, () => {
     console.log('Server started!');
 }); 

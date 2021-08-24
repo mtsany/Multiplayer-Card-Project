@@ -1,7 +1,7 @@
 {
   "name": "card-game",
   "version": "1.0.0",
-  "description": "",
+  "description": "1) Set directory to the main folder \"card-game\" and run the following codes:\r \t- \"npm init\"\r \t- \"npm install\" (should install ALL dependencies)",
   "main": "server.js",
   "dependencies": {
     "express": "^4.17.1",
@@ -19,5 +19,13 @@
     "start": "nodemon server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mtsany/Multiplayer-Card-Project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mtsany/Multiplayer-Card-Project/issues"
+  },
+  "homepage": "https://github.com/mtsany/Multiplayer-Card-Project#readme"
 }
